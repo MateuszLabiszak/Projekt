@@ -16,24 +16,17 @@
         <li><a href="#art3">O nas</a></li>
         <li><a href="#art4">Kontakt</a></li>
     </ul>
-
 </header>
-
 <body>
     <div class="container">
-
-
         <main>
+            <div class="pdm">
             <form class="form1">
+                <br>
                 <input type="button" id="b1" class="b1" value="na sztuki"></input>
                 <input type="button" id="b2" class="b2" value="bukiet"></input>
                 <input type="button" id="b3" class="b3" value="inne produkty"></input>
-                <input type="button" id="b4" class="b4" value="koszyk"></input>
                 <input type="reset" id="r1" class="reset" value="zresetuj"></input>
-
-
-
-                <br>
                 <section class="f1">
                     <select id="opt1">
                         <option value="0" class="p1"></option>
@@ -70,8 +63,8 @@
                         document.getElementById("opt1").style.display = "block";
 
 
-                    }
 
+                    }
 
                     const b2 = document.querySelector(".b2");
                     b2.addEventListener("click", zm2, false);
@@ -90,16 +83,6 @@
 
 
                     }
-                    const b4 = document.querySelector(".b4");
-                    b4.addEventListener("click", zm4, false);
-
-                    function zm4() {
-                        document.getElementById("opt4").style.display = "block";
-
-
-                    }
-
-
 
                     function oblicz() {
                         const wszystkie = document.querySelectorAll("option[class = 'p1']");
@@ -109,21 +92,17 @@
                             if (wszystkie[i].selected) {
                                 suma += parseInt(wszystkie[i].value)
                             }
+
                         }
                         document.querySelector(" #cena").textContent = suma + "zł"
                     }
                 </script>
-
             </form>
-
-
-
-
-
+        </div>
         </main>
-
         <aside>
             <div id="opt4">
+                <h3>Składanie zamówienia</h3>
                 <form class="form2">
                     <label>Imie:</label>
                     <br>
@@ -132,12 +111,12 @@
                     <br>
                     <label>Nazwisko:</label>
                     <br>
-                    <input type="email" id="Poczta" style="width:200px " required>
+                    <input type="text" id="nazw" style="width:200px " required>
                     <br>
                     <br>
                     <label>Telefon:</label>
                     <br>
-                    <input type="text" id="nazw" style="width:200px " required>
+                    <input type="text" id="tel" style="width:200px " required>
                     <br>
                     <br>
                     <label>Miasto:</label>
@@ -167,7 +146,8 @@
                     <br>
                     <label>Adres email:</label>
                     <br>
-                    <input type="text" id="tel" style="width:200px " required>
+                    <input type="email" id="poczta" style="width:200px " required>
+
                     <input type="submit" id="kup" class="kup" value="zamów"></input>
                     <button onclick=" oblicz() " type="button" id="suma">
                         <p class="cp"> koszt = <span id="cena"></span></p>
@@ -175,7 +155,8 @@
                 </form>
             </div>
         </aside>
-        <section id="glowna"></section>
+        <section id="glowna">
+        </section>
         <footer>&copy;Mateusz Labiszak</footer>
     </div>
 </body>
