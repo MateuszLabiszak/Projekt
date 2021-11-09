@@ -2,12 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-
 }
 
 body {
-    background-color: #FFE4BB;
-    opacity: 0.7;
+    opacity: 0.9;
+    background-image: url("bac.jpg");
+    /* background-color: rgba(205, 112, 76, 1); */
 }
 
 .container {
@@ -24,7 +24,7 @@ header ul {
     justify-content: space-evenly;
     left: 200px;
     right: 200px;
-    background-color: gainsboro;
+    background-color: rgba(242, 202, 110, 1);
 
 }
 
@@ -38,58 +38,55 @@ header a {
 }
 
 
-
 main {
-    padding: 80px;
-    flex-basis: 65%;
+    padding: 20px;
+    flex-basis: 50%;
     position: sticky;
     height: 400px;
     letter-spacing: 50px;
-
+    
 }
 
+main>.pdm{
+    padding: 25px;
+    width: 450px;
+    height: 300px;
+    background-color: rgba(242, 202, 110, 1);
+}
 
 aside {
-
-    flex-basis: 35%;
+    flex-basis: 50%;
     height: 400px;
-
-
 }
 
 aside>#opt4 {
     height: 600px;
     margin: 20px;
-    background-color: gainsboro;
-    opacity: 0.8;
-    display: none;
+    background-color: rgba(242, 202, 110, 1);
+    opacity: 0.99;
+    display:block;
+}
 
-
-
+aside>#opt4>h3{
+    text-align: center;
 }
 
 #glowna {
     display: flex;
     flex-wrap: wrap;
-    height: 700px;
+    height: 400px;
     flex-basis: 100%;
-
-
-}
-
-.form1 {
-    padding: 25px;
-    width: 450px;
-    height: 300px;
-    background-color: gainsboro;
 }
 
 .f1 {
     display: flex;
-
 }
 
 #b1 {
+    height: 40px;
+    width: 80px;
+}
+#b2 {
     height: 40px;
     width: 80px;
 }
@@ -99,14 +96,8 @@ aside>#opt4 {
     width: 82px;
 }
 
-#b2 {
-    height: 40px;
-    width: 80px;
-}
-
 #opt1 {
     display: none;
-
 }
 
 #opt2 {
@@ -117,28 +108,11 @@ aside>#opt4 {
     display: none;
 }
 
-
-
-#zegar {
-    height: 70px;
-    flex-basis: 30%;
-}
-
-.b4 {
-    height: 30px;
-    width: 70px;
-    margin: 25px;
-    display: flex;
-    float: right;
-}
-
 .reset {
-    height: 30px;
-    width: 70px;
-    margin: 25px;
-    display: flex;
+   height: 40px;
+    width: 80px;
+    margin: 50px;
     float: right;
-
 }
 
 .kup {
@@ -154,7 +128,6 @@ aside>#opt4 {
     float: right;
     text-align: center;
     height: 50px;
-
     margin: 15px;
 }
 
@@ -164,8 +137,6 @@ aside>#opt4 {
     margin: 25px;
     display: flex;
     float: right;
-
-
 }
 
 .reset1 {
@@ -174,7 +145,6 @@ aside>#opt4 {
     margin: 25px;
     display: flex;
     float: right;
-
 }
 
 .form2 {
@@ -182,7 +152,9 @@ aside>#opt4 {
 }
 
 footer {
+    height:55px;
     text-align: center;
     flex-basis: 100%;
     font-size: 30px;
+    background-color: rgba(242, 202, 110, 1);
 }
