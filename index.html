@@ -17,119 +17,121 @@
         <li><a href="#art4">Kontakt</a></li>
     </ul>
 </header>
+
 <body onload="checkCookie()">
     <div class="container">
         <main>
             <div class="pdm">
-            <form class="form1">
-                <input type="button" id="b1" class="b1" value="na sztuki"></input>
-                <input type="button" id="b2" class="b2" value="bukiet"></input>
-                <input type="button" id="b3" class="b3" value="inne produkty"></input>
-                <input type="reset" id="r1" class="reset" value="zresetuj"></input>
-                <section class="f1">
-                    <select id="opt1">
-                        <option value="0" class="p1"></option>
-                        <option value="5" class="p1">Róża-5zł</option>
-                        <option value="7" class="p1">Tulipan-7zł</option>
-                        <option value="4" class="p1">Mak-4zł</option>
-                        <option value="6" class="p1">Hiacynt-6zł</option>
-                        <option value="20" class="p1">Storczyk-20zł</option>
-                    </select>
+                <form class="form1">
+                    <input type="button" id="b1" class="b1" value="na sztuki"></input>
+                    <input type="button" id="b2" class="b2" value="bukiet"></input>
+                    <input type="button" id="b3" class="b3" value="inne produkty"></input>
+                    <input type="reset" id="r1" class="reset" value="zresetuj"></input>
+                    <section class="f1">
+                        <select id="opt1">
+                            <option value="0" class="p1"></option>
+                            <option value="5" class="p1">Róża-5zł</option>
+                            <option value="7" class="p1">Tulipan-7zł</option>
+                            <option value="4" class="p1">Mak-4zł</option>
+                            <option value="6" class="p1">Hiacynt-6zł</option>
+                            <option value="20" class="p1">Storczyk-20zł</option>
+                        </select>
 
 
-                    <select id="opt2">
-                        <option value="0" class="p1"></option>
-                        <option value="30" class="p1">Bukiet róż-30zł</option>
-                        <option value="40" class="p1">Bukiet tulipanów-40zł</option>
-                        <option value="20" class="p1">Bukiet maku-20zł</option>
-                        <option value="10" class="p1">Bukiet hiacyntów-10zł</option>
-                        <option value="15" class="p1">Bukiet fiołków-15zł</option>
-                    </select>
-                    <select id="opt3">
-                        <option value="0" class="p1"></option>
-                        <option value="40" class="p1">Kosz wiklinowy-40zł</option>
-                        <option value="20" class="p1">Ziemia do kwiatów-20zł</option>
-                        <option value="15" class="p1">Donice gliniane-15zł</option>
-                        <option value="10" class="p1">Donice plastikowe-10zł</option>
-                        <option value="10" class="p1">patyki do kwiatów-10zł</option>
-                    </select>
-                </section>
-                <script>
+                        <select id="opt2">
+                            <option value="0" class="p1"></option>
+                            <option value="30" class="p1">Bukiet róż-30zł</option>
+                            <option value="40" class="p1">Bukiet tulipanów-40zł</option>
+                            <option value="20" class="p1">Bukiet maku-20zł</option>
+                            <option value="10" class="p1">Bukiet hiacyntów-10zł</option>
+                            <option value="15" class="p1">Bukiet fiołków-15zł</option>
+                        </select>
+                        <select id="opt3">
+                            <option value="0" class="p1"></option>
+                            <option value="40" class="p1">Kosz wiklinowy-40zł</option>
+                            <option value="20" class="p1">Ziemia do kwiatów-20zł</option>
+                            <option value="15" class="p1">Donice gliniane-15zł</option>
+                            <option value="10" class="p1">Donice plastikowe-10zł</option>
+                            <option value="10" class="p1">patyki do kwiatów-10zł</option>
+                        </select>
+                    </section>
+                    <script>
+                        function setCookie(x, y, z) {
+                            const d = new Date();
+                            d.setTime(d.getTime() + (z * 24 * 60 * 60 * 1000));
+                            let wygasa = "wygasa=" + d.toUTCString();
+                            document.cookie = x + "=" + y + ";" + wygasa;
+                        }
 
-function setCookie(x, y, z) {
-  const d = new Date();
-  d.setTime(d.getTime() + (z * 24 * 60 * 60 * 1000));
-  let wygasa = "wygasa="+d.toUTCString();
-  document.cookie = x + "=" + y + ";" + wygasa ;
-}
+                        function getCookie(x) {
+                            let imie = x + "=";
+                            let n1 = document.cookie.split(';');
+                            for (let ii = 0; ii < n1.length; ii++) {
+                                let c = n1[ii];
+                                while (c.charAt(0) == ' ') {
+                                    c = c.substring(1);
+                                }
+                                if (c.indexOf(imie) == 0) {
+                                    return c.substring(imie.length, c.length);
+                                }
+                            }
+                            return "";
+                        }
 
-function getCookie(x) {
-  let imie = x + "=";
-  let n1 = document.cookie.split(';');
-  for(let ii = 0; ii < n1.length; ii++) {
-    let c = n1[ii];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(imie) == 0) {
-      return c.substring(imie.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  let user = getCookie("użytkownik");
-  if (user != "") {
-    alert("Witaj ponownie " + user);
-  } else {
-    user = prompt("Proszę podaj swoje imię:", "");
-    if (user != "" && user != null) {
-      setCookie("użytkownik", user, 365);
-    }
-  }
-} 
-
-
-                    const b1 = document.querySelector(".b1");
-                    b1.addEventListener("click", zm1, false);
-
-                    function zm1() {
-                        document.getElementById("opt1").style.display = "block";
-                    }
-
-
-                    
-
-                    const b2 = document.querySelector(".b2");
-                    b2.addEventListener("click", zm2, false);
-
-                    function zm2() {
-                        document.getElementById("opt2").style.display = "block";
-                    }
-
-                    const b3 = document.querySelector(".b3");
-                    b3.addEventListener("click", zm3, false);
-
-                    function zm3() {
-                        document.getElementById("opt3").style.display = "block";
-                    }
-
-                    function oblicz() {
-                        const wszystkie = document.querySelectorAll("option[class = 'p1']");
-                        console.log(wszystkie);
-                        let suma = 0;
-                        for (let i = 0; i < wszystkie.length; i++) {
-                            if (wszystkie[i].selected) {
-                                suma += parseInt(wszystkie[i].value)
+                        function checkCookie() {
+                            let user = getCookie("użytkownik");
+                            if (user != "") {
+                                alert("Witaj ponownie " + user);
+                            } else {
+                                user = prompt("Proszę podaj swoje imię:", "");
+                                if (user != "" && user != null) {
+                                    setCookie("użytkownik", user, 365);
+                                }
                             }
                         }
-                        document.querySelector(" #cena").textContent = suma + "zł"
-                    }
-                   
-                </script>
-            </form>
-        </div>
+
+
+                        const b1 = document.querySelector(".b1");
+                        b1.addEventListener("click", zm1, false);
+
+                        function zm1() {
+                            document.getElementById("opt1").style.display = "block";
+                        }
+
+
+
+
+                        const b2 = document.querySelector(".b2");
+                        b2.addEventListener("click", zm2, false);
+
+                        function zm2() {
+                            document.getElementById("opt2").style.display = "block";
+                        }
+
+                        const b3 = document.querySelector(".b3");
+                        b3.addEventListener("click", zm3, false);
+
+                        function zm3() {
+                            document.getElementById("opt3").style.display = "block";
+                        }
+
+                        function oblicz() {
+                            const wszystkie = document.querySelectorAll("option[class = 'p1']");
+                            console.log(wszystkie);
+                            let suma = 0;
+                            for (let i = 0; i < wszystkie.length; i++) {
+                                if (wszystkie[i].selected) {
+                                    suma += parseInt(wszystkie[i].value)
+                                }
+                            }
+                            document.querySelector(" #cena").textContent = suma + "zł"
+                            if (suma == 0) {
+                                alert("Twój koszyk jest pusty");
+                            }
+                        }
+                    </script>
+                </form>
+            </div>
         </main>
         <aside>
             <div id="opt4">
@@ -190,6 +192,6 @@ function checkCookie() {
         </section>
         <footer>&copy;Mateusz Labiszak</footer>
     </div>
-</body >
+</body>
 
 </html>
